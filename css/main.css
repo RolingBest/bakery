@@ -1,31 +1,27 @@
 @font-face {
   font-display: swap;
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-weight: 300;
-  src: url('../fonts/poppins-v24-latin-300.woff2') format('woff2');
+  src: url("../fonts/poppins-v24-latin-300.woff2") format("woff2");
 }
-
 @font-face {
   font-display: swap;
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-weight: 400;
-  src: url('../fonts/poppins-v24-latin-regular.woff2') format('woff2');
+  src: url("../fonts/poppins-v24-latin-regular.woff2") format("woff2");
 }
-
 @font-face {
   font-display: swap;
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-weight: 600;
-  src: url('../fonts/poppins-v24-latin-600.woff2') format('woff2');
+  src: url("../fonts/poppins-v24-latin-600.woff2") format("woff2");
 }
-
 @font-face {
   font-display: swap;
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-weight: 900;
-  src: url('../fonts/poppins-v24-latin-900.woff2') format('woff2');
+  src: url("../fonts/poppins-v24-latin-900.woff2") format("woff2");
 }
-
 :root {
   --color-primary-dark: #31261a;
   --color-primary-light: #faf4ea;
@@ -35,7 +31,6 @@
   --color-brand-light: #cfcfbc;
 }
 
-/* Base */
 *,
 *::before,
 *::after {
@@ -45,7 +40,7 @@
 body {
   color: var(--color-primary-dark);
   background-color: var(--color-primary-light);
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 18px;
   line-height: 1.5;
   font-weight: 400;
@@ -76,7 +71,15 @@ ul {
   list-style-type: none;
 }
 
-/* Button */
+.visual-hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 .button {
   background-color: var(--color-brand-normal);
   font-weight: 600;
@@ -86,30 +89,18 @@ ul {
   padding: 16px 32px;
   cursor: pointer;
 }
-
 .button:hover {
   color: var(--color-brand-dark);
   background-color: var(--color-primary-light);
 }
 
-/* Link */
 .link {
   color: var(--color-primary-light);
   text-decoration: none;
   transition: color 0.3s;
 }
-
 .link:hover {
   color: var(--color-brand-normal);
-}
-
-.visual-hidden {
-  position: absolute;
-  left: -10000px;
-  top: auto;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
 }
 
 .section {
@@ -136,8 +127,6 @@ ul {
   margin: 0 auto;
   padding: 0 24px;
 }
-
-/* Header */
 
 header {
   position: absolute;
@@ -167,16 +156,8 @@ header {
   justify-content: center;
 }
 
-/* Hero section */
-
 .hero-section {
-  background-image: linear-gradient(
-      102.76deg,
-      rgba(18, 18, 17, 0.78) 2.03%,
-      rgba(18, 18, 17, 0.6) 58.46%,
-      rgba(18, 18, 17, 0) 90.36%
-    ),
-    url('../images/hero-section-background.jpg');
+  background-image: linear-gradient(102.76deg, rgba(18, 18, 17, 0.78) 2.03%, rgba(18, 18, 17, 0.6) 58.46%, rgba(18, 18, 17, 0) 90.36%), url("../images/hero-section-background.jpg");
   background-repeat: no-repeat;
   background-position: center top;
   background-size: cover;
@@ -195,8 +176,6 @@ header {
   color: var(--color-brand-normal);
 }
 
-/* Advantages section */
-
 .advantages-section {
   padding: 16px 0;
   background-color: var(--color-brand-normal);
@@ -213,8 +192,6 @@ header {
   font-size: 20px;
   font-weight: 300;
 }
-
-/* Traditions section */
 
 .traditions-section {
   padding-top: 96px;
@@ -251,8 +228,6 @@ header {
   max-width: 340px;
 }
 
-/* Chefs section */
-
 .chefs-title {
   position: relative;
   max-width: 520px;
@@ -271,7 +246,7 @@ header {
 .chefs-title::after {
   position: absolute;
   bottom: 24px;
-  content: '';
+  content: "";
   width: 352px;
   border: 2px solid var(--color-brand-light);
 }
@@ -293,8 +268,7 @@ header {
 
 .chef-photo {
   border-radius: 4px 4px 4px 200px;
-  box-shadow: -16px 16px 0 0 var(--color-primary-light),
-    -16px 16px 0 2px var(--color-secondary-dark);
+  box-shadow: -16px 16px 0 0 var(--color-primary-light), -16px 16px 0 2px var(--color-secondary-dark);
 }
 
 .chef-title {
@@ -311,7 +285,6 @@ header {
   margin-bottom: 0;
 }
 
-/* Formats section  */
 .formats-title {
   margin-bottom: 80px;
 }
@@ -325,11 +298,13 @@ header {
 .format-title {
   font-size: 24px;
   font-weight: 600;
+  color: var(--color-primary-light);
 }
 
 .format-text {
   font-size: 14px;
   font-weight: 300;
+  color: var(--color-primary-light);
 }
 
 .formats-list {
@@ -339,6 +314,31 @@ header {
 
 .formats-items {
   flex-basis: calc((100% - 40px) / 3);
+}
+
+.format-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  height: 444px;
+  padding: 24px;
+  background-image: linear-gradient(180deg, rgba(49, 38, 26, 0) 55.21%, rgba(49, 38, 26, 0.71) 72.92%, var(--color-primary-dark) 100%);
+  border-radius: 16px;
+  transition: transform 0.3s;
+}
+
+.format-card:hover {
+  transform: scale(1.05);
+}
+
+.format-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
 
 /* Carousel */
@@ -366,25 +366,6 @@ header {
   transform: rotate(180deg);
 }
 
-.format-card {
-  height: 444px;
-  padding: 24px;
-  background-image: linear-gradient(
-    180deg,
-    rgba(49, 38, 26, 0) 55.21%,
-    rgba(49, 38, 26, 0.71) 72.92%,
-    var(--color-primary-dark) 100%
-  );
-  border-radius: 16px;
-  transition: transform 0.3s;
-}
-
-.format-card:hover {
-  transform: scale(1.05);
-}
-
-/* Contact section */
-
 .contact-section {
   padding-bottom: 96px;
 }
@@ -404,11 +385,10 @@ header {
   margin-bottom: 16px;
 }
 
-/* Footer  */
 .footer {
   position: relative;
   padding: 32px 0;
-  background-image: url('../images/footer-background.png');
+  background-image: url("../images/footer-background.png");
   background-color: var(--color-primary-dark);
   background-repeat: no-repeat;
   background-position: center;
@@ -420,21 +400,21 @@ header {
   position: absolute;
   bottom: 0;
   background-repeat: no-repeat;
-  content: '';
+  content: "";
 }
 
 .footer::before {
   width: 180px;
   height: 120px;
   left: 0;
-  background-image: url('../images/decore-bread-small.png');
+  background-image: url("../images/decore-bread-small.png");
 }
 
 .footer::after {
   width: 380px;
   height: 190px;
   right: 0;
-  background-image: url('../images/decore-bread-large.png');
+  background-image: url("../images/decore-bread-large.png");
 }
 
 .footer-container {
@@ -513,7 +493,6 @@ header {
 }
 
 /** Model*/
-
 .backdrop {
   position: fixed;
   top: 0;
@@ -543,11 +522,11 @@ header {
   position: absolute;
   bottom: 0;
   background-repeat: no-repeat;
-  content: '';
+  content: "";
   width: 180px;
   height: 240px;
   right: 0;
-  background-image: url('../images/modal-decore-bread.png');
+  background-image: url("../images/modal-decore-bread.png");
 }
 
 .modal-btn-close {
@@ -585,7 +564,6 @@ header {
 }
 
 /* Form */
-
 .form-field {
   position: relative;
   margin-bottom: 32px;
@@ -616,10 +594,20 @@ header {
   outline: none;
 }
 
+.form-input::-moz-placeholder {
+  color: var(--color-secondary-dark);
+  font-size: 16px;
+  line-height: 1.17;
+}
+
 .form-input::placeholder {
   color: var(--color-secondary-dark);
   font-size: 16px;
   line-height: 1.17;
+}
+
+.form-input:focus::-moz-placeholder {
+  color: var(--color-primary-dark);
 }
 
 .form-input:focus::placeholder {
@@ -643,4 +631,4 @@ header {
 .form-terms-link {
   color: var(--color-primary-dark);
   text-underline-offset: 2px;
-}
+}/*# sourceMappingURL=main.css.map */
