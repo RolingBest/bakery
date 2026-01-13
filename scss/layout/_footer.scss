@@ -10,35 +10,64 @@
   &::before,
   &::after {
     position: absolute;
-    bottom: 0;
     background-repeat: no-repeat;
     content: '';
   }
 
   &::before {
-    width: 180px;
-    height: 120px;
+    top: 0;
     left: 0;
-    background-image: url('../images/decore-bread-small.png');
+    width: 70px;
+    height: 180px;
+    margin-top: 60px;
+    background-image: url('../images/decore-bread-large-mobile.png');
+
+    @media screen and (min-width: $bp-tablet) {
+      bottom: 0;
+      top: auto;
+      background-image: url('../images/decore-bread-small.png');
+      width: 380px;
+      height: 120px;
+      margin-top: 0;
+    }
   }
 
   &::after {
-    width: 380px;
-    height: 190px;
     right: 0;
-    background-image: url('../images/decore-bread-large.png');
+    bottom: 0;
+    width: 100px;
+    height: 90px;
+    background-image: url('../images/decore-bread-small-mobile.png');
+
+    @media screen and (min-width: $bp-tablet) {
+      width: 380px;
+      height: 185px;
+      background-image: url('../images/decore-bread-large.png');
+    }
   }
 
   &__container {
     display: flex;
+    flex-direction: column;
     gap: 20px;
+
+    @media screen and (min-width: $bp-desktop) {
+      flex-direction: row;
+    }
   }
 
   &__nav,
   &__address {
+    text-align: center;
     display: flex;
-    flex-basis: 50%;
+    flex-direction: column;
     gap: 20px;
+
+    @media screen and (min-width: $bp-desktop) {
+      flex-direction: row;
+      flex-basis: 50%;
+      text-align: left;
+    }
   }
 
   &__address-list {
@@ -82,7 +111,12 @@
 
   &__social-icons {
     display: flex;
+    margin: 0 auto;
     gap: 24px;
+
+    @media screen and (min-width: $bp-desktop) {
+      margin: 0;
+    }
   }
 
   &__address-icon {

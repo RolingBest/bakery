@@ -1,0 +1,48 @@
+.mobile-menu {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: 16px 24px;
+  z-index: 2;
+  background-color: var(--color-primary-light);
+  transform: translateX(100%);
+  transition: transform 0.3s;
+
+  &::after {
+    position: absolute;
+    bottom: 0;
+    background-repeat: no-repeat;
+    content: '';
+    width: 180px;
+    height: 240px;
+    right: 0;
+    background-image: url('../images/modal-decore-bread.png');
+  }
+
+  &.is-open {
+    transform: translateX(0);
+  }
+
+  &__btn-close {
+    top: 16px;
+    right: 24px;
+  }
+
+  &__logo {
+    margin-bottom: 30px;
+  }
+
+  &__link {
+    font-size: 18px;
+    color: var(--color-primary-dark);
+    text-decoration: none;
+    margin-bottom: 16px;
+    transition: color 0.3s;
+
+    &:hover {
+      color: var(--color-brand-normal);
+    }
+  }
+}
